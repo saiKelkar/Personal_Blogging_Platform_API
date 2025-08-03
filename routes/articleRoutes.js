@@ -1,4 +1,18 @@
 import express from "express"
-import x from '../controllers/articleControllers.js'
+import { 
+    getArticle,
+    getArticleById,
+    createArticle,
+    updateArticle,
+    deleteArticle
+ } from '../controllers/articleControllers.js'
 
 const router = express.Router()
+
+router.get('/', getArticle)
+router.get('/:id', getArticleById)
+router.post('/', createArticle)
+router.put('/:id', updateArticle)
+router.delete('/:id', deleteArticle)
+
+export default router
